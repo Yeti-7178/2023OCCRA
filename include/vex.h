@@ -6,6 +6,7 @@
 #include "v5.h"
 #include "v5_vcs.h"
 
+// void vexcodeInit(void);
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \
