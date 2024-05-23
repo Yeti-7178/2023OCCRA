@@ -39,6 +39,17 @@ void mecanumRun()
   rightFrontMotor.state(-speed - strafe + turn,percent);
   rightBackMotor.state(-speed + strafe + turn,percent);
 }
+void tankRun()
+{
+  if(Controller1.Axis3.position()){
+    leftFrontMotor.state(Controller1.Axis3.position(), percent);
+    leftBackMotor.state(Controller1.Axis3.position(), percent);
+  }
+  if(Controller1.Axis2.position()){
+    rightFrontMotor.state(Controller1.Axis2.position(), percent);
+    rightBackMotor.state(Controller1.Axis2.position(), percent);
+  }
+}
 
 void intakeRun()
 {
@@ -80,7 +91,7 @@ int main() {
     speed = Controller1.Axis3.position();
     turn = Controller1.Axis1.position();
     strafe = -Controller1.Axis4.position();
-    mecanumRun();
+    tankRun();
     intakeRun();
     outtakeRun();
 
